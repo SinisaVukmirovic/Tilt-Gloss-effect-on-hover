@@ -1,5 +1,6 @@
 const card = document.querySelector('[data-card]');
 
+// rotate3D(x, y, z, deg)
 // rotate3D property explanation - https://youtu.be/zAxXE9vZWPo?t=177
 card.addEventListener('mousemove', (e) => {
     const pointerX = e.clientX;
@@ -15,7 +16,18 @@ card.addEventListener('mousemove', (e) => {
     const cardCenterX = cardRect.left + halfWidth;
     const cardCenterY = cardRect.top + halfHeight;
 
-    console.log(cardCenterX,cardCenterY)
+    const deltaX = pointerX - cardCenterX;
+    const deltaY = pointerY - cardCenterY;
+    // calculating the mouse cursor coordinates relative to the card center in deltaX and deltaY
+
+    const rx = deltaY / halfHeight;
+    const ry = deltaX / halfWidth;
+    // calculating the dynamic values for the X and Y arguments of the rotate3D property
+    // rotate3D(x, y, z, deg)
+
+    card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, 20deg)`;
+
+    // console.log(rx,ry)
 });
 
 card.addEventListener('mouseleave', () => {});
