@@ -25,12 +25,21 @@ card.addEventListener('mousemove', (e) => {
     // calculating the dynamic values for the X and Y arguments of the rotate3D property
     // rotate3D(x, y, z, deg)
 
-    card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, 20deg)`;
+    // calculating the distance from the center with pythagor theorim
+    const distanceFromCenter = Math.sqrt(Math.pow(deltaX, 2) + (Math.pow(deltaY, 2)));
+    // calculating the maximum distance from the center and the furthest edge
+    const maximumDistance = Math.max(halfWidth, halfHeight);
+    // calculating the dynamic degree of the rotation angle
+    const degrees = distanceFromCenter * 10 / maximumDistance;
+    // we multiply by 10 to get at least 10 degree angle, since without the value could be very small
 
-    // console.log(rx,ry)
+    card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, ${degrees}deg)`;
 });
 
-card.addEventListener('mouseleave', () => {});
+card.addEventListener('mouseleave', () => {
+    card.style = null;
+    // reseting the applied styles when the mouse leaves card
+});
 
 
 // console.log(card)

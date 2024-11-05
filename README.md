@@ -14,3 +14,6 @@ ___
 
 #### calculating the mouse cursor coordinates relative to the card center in deltaX and deltaY
 ![cursor distance from card center](./screenshots/image-4.png)
+
+#### calculating the distance on the mouse cursor from the center of the card to have different tilting angle based on distance from the center
+![calculating the distance from the center](./screenshots/image-5.png)
