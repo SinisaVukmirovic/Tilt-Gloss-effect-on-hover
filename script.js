@@ -1,4 +1,5 @@
 const card = document.querySelector('[data-card]');
+const gloss = document.querySelector('[data-gloss]');
 
 // rotate3D(x, y, z, deg)
 // rotate3D property explanation - https://youtu.be/zAxXE9vZWPo?t=177
@@ -30,15 +31,22 @@ card.addEventListener('mousemove', (e) => {
     // calculating the maximum distance from the center and the furthest edge
     const maximumDistance = Math.max(halfWidth, halfHeight);
     // calculating the dynamic degree of the rotation angle
-    const degrees = distanceFromCenter * 10 / maximumDistance;
+    const degrees = (distanceFromCenter * 10) / maximumDistance;
     // we multiply by 10 to get at least 10 degree angle, since without the value could be very small
 
     card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, ${degrees}deg)`;
+
+    // gloss effect
+    gloss.style.transform = `translate(${-ry * 100}, ${-rx * 100}) scale(2.4)`;
+    // we use ry for X and rx for Y values because we want gloss effect to mirror the mouse movement
+    gloss.style.opacity = (distanceFromCenter * 0.6) / maximumDistance;
 });
 
 card.addEventListener('mouseleave', () => {
     card.style = null;
     // reseting the applied styles when the mouse leaves card
+
+    gloss.style.opacity = null;
 });
 
 
