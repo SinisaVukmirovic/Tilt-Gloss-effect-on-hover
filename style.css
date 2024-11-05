@@ -6,8 +6,8 @@
 
 :root {
     --bg-clr: #222;
-    --box-bg-clr: crimson;
-    --highlighg-effect-clr: coral;
+    --box-bg-clr: #000;
+    --highlighg-effect-clr: #111;
 }
 
 body {
@@ -18,12 +18,12 @@ body {
 }
 
 .card {
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
     /* background: var(--box-bg-clr); */
     background: linear-gradient(
         to bottom right,
-        hsl(348, 79%, 54%), 
+        var(--highlighg-effect-clr), 
         var(--box-bg-clr)
     );
     border-radius: 1rem;
@@ -33,7 +33,7 @@ body {
     transition: all 200ms ease;
 
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 
     & .gloss {
         position: absolute;
@@ -42,7 +42,7 @@ body {
         border-radius: 100%;
         background: radial-gradient(
             circle,
-            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, .2) 0%,
             rgba(255, 255, 255, 0) 50%,
             rgba(255, 255, 255, 0) 100%
         );
