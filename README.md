@@ -1,7 +1,7 @@
 ## Tilting on hover effect
 ___
 
-#### Rotate3D property explanation - [text](https://youtu.be/zAxXE9vZWPo?t=177)
+#### Rotate3D property explanation - [watch explanation](https://youtu.be/zAxXE9vZWPo?t=177)
 ![Rotate3D property](./screenshots/image.png)
 
 #### clientX and clientY properties define the coordinates of the mouse pointer, relative to the browser's visible viewport

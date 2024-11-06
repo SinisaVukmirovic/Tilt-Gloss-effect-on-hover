@@ -37,7 +37,7 @@ card.addEventListener('mousemove', (e) => {
     card.style.transform = `perspective(400px) rotate3D(${-rx}, ${ry}, 0, ${degrees}deg)`;
 
     // gloss effect
-    gloss.style.transform = `translate(${-ry * 100}%, ${-rx * 100}%) scale(2.4)`;
+    gloss.style.transform = `translate(${-ry * 100}%, ${-rx * 100}%) scale(2)`;
     // we use ry for X and rx for Y values because we want gloss effect to mirror the mouse movement
     gloss.style.opacity = (distanceFromCenter * 0.6) / maximumDistance;
 });
@@ -48,6 +48,3 @@ card.addEventListener('mouseleave', () => {
 
     gloss.style.opacity = null;
 });
-
-
-// console.log(card)
